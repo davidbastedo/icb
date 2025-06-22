@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://be5ahgcav4v4v"]
+
+[ext_resource type="Script" uid="uid://i2nwofdfvpwt" path="res://left_servo.gd" id="1_4xnxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkrly"]
+size = Vector2(16.5, 16.5)
+
+[node name="Left Servo" type="Area2D"]
+script = ExtResource("1_4xnxl")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-48, 8)
+color = Color(0.216374, 0.737104, 0.789956, 1)
+polygon = PackedVector2Array(40, -16, 56, -16, 56, 8.71083e-08, 40, 1.19209e-06)
+uv = PackedVector2Array(140.324, 40.777, 333.507, 36.814, 254.857, 64.644, 46.7369, 67.064)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hkrly")

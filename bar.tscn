@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwa5f4ql76sie"]
+
+[ext_resource type="Script" uid="uid://c4waoxr8wx1aw" path="res://bar.gd" id="1_a0eh7"]
+[ext_resource type="PackedScene" uid="uid://dblps4y5pk71g" path="res://right_servo.tscn" id="1_sbg6f"]
+[ext_resource type="PackedScene" uid="uid://be5ahgcav4v4v" path="res://left_servo.tscn" id="2_a0eh7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sbg6f"]
+a = Vector2(-129, 0)
+b = Vector2(127, 0)
+
+[node name="Bar" type="Node2D"]
+script = ExtResource("1_a0eh7")
+
+[node name="Right Servo" parent="." instance=ExtResource("1_sbg6f")]
+position = Vector2(272, 1)
+
+[node name="Left Servo" parent="." instance=ExtResource("2_a0eh7")]
+position = Vector2(-156, 0)
+
+[node name="Bar Area2D" type="Area2D" parent="."]
+scale = Vector2(1.88, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar Area2D"]
+shape = SubResource("SegmentShape2D_sbg6f")
+
+[node name="Line2D" type="Line2D" parent="Bar Area2D"]
+points = PackedVector2Array(-126, 0, 126, 0)
+default_color = Color(0.352941, 0.356863, 1, 1)
